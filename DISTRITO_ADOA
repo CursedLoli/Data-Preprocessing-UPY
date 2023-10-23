@@ -1,0 +1,53 @@
+-- Usamos "SELECT * FROM" para poder visualizar los datos de nuestra tabla, en este caso INE_DISTRITO_2020.
+SELECT * FROM INE_DISTRITO_2020;
+
+-- Se usa "SELECT DISTINCT" sobre nuestra columna "NOM_ENT" para seleccionar los datos sin que se repitan.
+SELECT DISTINCT NOM_ENT FROM INE_DISTRITO_2020;
+
+-- Cambiamos los caracteres especiales que se puedan encontrar en la columna "NOM_ENT".
+-- Usamos "UPDATE" para indicar que se realizará una actualización sobre los datos.
+-- Usamos "SET" para establecer el nombre que queremos asignar.
+-- Usamos "LIKE" para encontrar un valor similar al que queremos cambiar.
+UPDATE INE_DISTRITO_2020
+SET NOM_ENT = 'Ciudad de México'
+WHERE NOM_ENT LIKE 'Ciudad de M%';
+
+UPDATE INE_DISTRITO_2020
+SET NOM_ENT = 'Michoacán de Ocampo'
+WHERE NOM_ENT LIKE 'Michoac%';
+
+UPDATE INE_DISTRITO_2020
+SET NOM_ENT = 'México'
+WHERE NOM_ENT LIKE 'M%xico';
+
+UPDATE INE_DISTRITO_2020
+SET NOM_ENT = 'Nuevo León'
+WHERE NOM_ENT LIKE 'Nuevo Le%';
+
+UPDATE INE_DISTRITO_2020
+SET NOM_ENT = 'Querétaro'
+WHERE NOM_ENT LIKE 'Quer%';
+
+UPDATE INE_DISTRITO_2020
+SET NOM_ENT = 'San Luis Potosí'
+WHERE NOM_ENT LIKE 'San Luis Potos%';
+
+UPDATE INE_DISTRITO_2020
+SET NOM_ENT = 'Yucatán'
+WHERE NOM_ENT LIKE 'Yucat%';
+
+-- Se usa "SELECT DISTINCT" sobre nuestra columna "COMPLEJIDA" para seleccionar los datos sin que se repitan.
+SELECT DISTINCT COMPLEJIDA FROM INE_DISTRITO_2020;
+
+-- Cambiamos los caracteres especiales que se puedan encontrar en la columna "COMPLEJIDA".
+-- Usamos "UPDATE" para indicar que se realizará una actualización sobre los datos.
+-- Usamos "SET" para establecer el nombre que queremos asignar.
+-- Usamos "LIKE" para encontrar un valor similar al que queremos cambiar.
+SET COMPLEJIDA = 'Concentración Media'
+WHERE COMPLEJIDA LIKE 'Concentraci%';
+
+--Usar "ALTER TABLE" nos permite editar sobre nuestra tabla.
+--Usamos "ADD" y especificamos con "INT" que se trata de un entero, para añadir una columna.
+--Las columnas que añadiremos son abreviaciones de la culumna "COMPLEJIDA"
+ALTER TABLE INE_DISTRITO_2020
+ADD ALT_CON_1 INT, ALT_CON_2 INT, CON_MED INT, CON1 INT, CON2 INT, DIS1 INT, DIS2 INT, M_DIS1 INT, M_DIS2 INT;
