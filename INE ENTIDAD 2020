@@ -1,0 +1,37 @@
+-- Usamos "SELECT * FROM" para poder visualizar los datos de nuestra tabla, en este caso INE_ENTIDAD_2020.
+SELECT * FROM INE_ENTIDAD_2020;
+
+-- Se usa "SELECT DISTINCT" sobre nuestra columna "NOM_ENT" para seleccionar los datos sin que se repitan.
+SELECT DISTINCT NOM_ENT FROM INE_ENTIDAD_2020;
+
+-- Cambiamos los caracteres especiales que se puedan encontrar en la columna "NOM_ENT".
+-- Usamos "UPDATE" para indicar que se realizará una actualización sobre los datos.
+-- Usamos "SET" para establecer el nombre que queremos asignar.
+-- Usamos "LIKE" para encontrar un valor similar al que queremos cambiar.UPDATE INE_ENTIDAD_2020
+UPDATE INE_ENTIDAD_2020
+SET NOM_ENT = 'Ciudad de México'
+WHERE NOM_ENT LIKE 'Ciudad de M%';
+
+UPDATE INE_ENTIDAD_2020
+SET NOM_ENT = 'Michoacán de Ocampo'
+WHERE NOM_ENT LIKE 'Michoac%';
+
+UPDATE INE_ENTIDAD_2020
+SET NOM_ENT = 'México'
+WHERE NOM_ENT LIKE 'M%xico';
+
+UPDATE INE_ENTIDAD_2020
+SET NOM_ENT = 'Nuevo León'
+WHERE NOM_ENT LIKE 'Nuevo Le%';
+
+UPDATE INE_ENTIDAD_2020
+SET NOM_ENT = 'Querétaro'
+WHERE NOM_ENT LIKE 'Quer%';
+
+UPDATE INE_ENTIDAD_2020
+SET NOM_ENT = 'San Luis Potosí'
+WHERE NOM_ENT LIKE 'San Luis Potos%';
+
+UPDATE INE_ENTIDAD_2020
+SET NOM_ENT = 'Yucatán'
+WHERE NOM_ENT LIKE 'Yucat%';
